@@ -44,18 +44,24 @@ arguments.
 \subsection{Examples: Functions with Built-in NA classes}{
 
 Given a \code{Customer}
-\href{https://tidylab.github.io/R6P/reference/ValueObject.html}{\code{ValueObject}}\if{html}{\out{<div class="r">}}\preformatted{Customer <- function(given = NA_character_, family = NA_character_)
+\href{https://tidylab.github.io/R6P/reference/ValueObject.html}{\code{ValueObject}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{Customer <- function(given = NA_character_, family = NA_character_)
     return(data.frame(given = given, family = family))
 }\if{html}{\out{</div>}}
 
-When \code{Customer} is decorated with \code{validate_arguments}\if{html}{\out{<div class="r">}}\preformatted{Customer <- validate_arguments(Customer)
+When \code{Customer} is decorated with \code{validate_arguments}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{Customer <- validate_arguments(Customer)
 }\if{html}{\out{</div>}}
 
 Then passing arguments of any type other then the declared type prompts
 an informative error.
 
 In the \code{Customer} example, both input arguments \code{given} and \code{family} are
-declared as \code{character}.\if{html}{\out{<div class="r">}}\preformatted{Customer(given = "Bilbo", family = "Baggins") # Works as both arguments are character
+declared as \code{character}.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{Customer(given = "Bilbo", family = "Baggins") # Works as both arguments are character
 #>   given  family
 #> 1 Bilbo Baggins
 try(Customer(given = "Bilbo", family = 90201)) # Fails because family is not a character
